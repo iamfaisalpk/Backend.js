@@ -7,19 +7,30 @@
 
 // server.listen("4040")
 
+// const http = require('http');
+
+// const server = http.createServer((req,res)=>{
+//     if (req.url === '/hj'){
+//         res.write('hloo')
+//         res.end()
+//     }else {
+//         res.end("error")
+//     }
+// })
+
+// server.listen("8080")
+
 const http = require('http');
 
-const server = http.createServer((req,res)=>{
-    if (req.url === '/hj'){
-        res.write('hloo')
-        res.end()
-    }else {
-        res.end("error")
+const server = http.createServer((req,rs)=>{
+    if (req.url === '/'){
+        rs.write('hii hloo')
+    } else {
+        rs.end("error")
     }
 })
 
-server.listen("8080")
-
+server.listen("5050")
 // const http = require("http");
 
 // const server = http.createServer((req,res)=>{
