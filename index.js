@@ -7,29 +7,27 @@
 
 // server.listen("4040")
 
-// const http = require('http');
-
-// const server = http.createServer((req,res)=>{
-//     if (req.url === '/hj'){
-//         res.write('hloo')
-//         res.end()
-//     }else {
-//         res.end("error")
-//     }
-// })
-
-// server.listen("8080")
-
-const http = require("http");
+const http = require('http');
 
 const server = http.createServer((req,res)=>{
-    res.write("hello, task");
-    res.end();
-});
-
-server.listen(3000, ()=>{
-    console.log("server side running")
+    if (req.url === '/hj'){
+        res.write('hloo')
+        res.end()
+    }else {
+        res.end("error")
+    }
 })
+
+server.listen("8080")
+
+// const http = require("http");
+
+// const server = http.createServer((req,res)=>{
+//     res.write("tasks");
+//     res.end()
+// })
+
+// server.listen ("7860")
 
 
 // const fs = require('fs');
