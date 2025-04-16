@@ -20,17 +20,19 @@
 
 // server.listen("8080")
 
-const http = require('http');
+const http = require("http");
 
-const server = http.createServer((req,rs)=>{
-    if (req.url === '/'){
-        rs.write('hii hloo')
+const server = http.createServer((req,res)=>{
+    if (req.url === "/"){
+        res.write("hiii");
+        res.end()
     } else {
-        rs.end("error")
+        res.end("error")
     }
 })
 
 server.listen("5050")
+
 // const http = require("http");
 
 // const server = http.createServer((req,res)=>{
