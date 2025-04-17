@@ -20,18 +20,18 @@
 
 // server.listen("8080")
 
-// const http = require("http");
+const http = require("http");
 
-// const server = http.createServer((req,res)=>{
-//     if (req.url === "/"){
-//         res.write("hiii");
-//         res.end()
-//     } else {
-//         res.end("error")
-//     }
-// })
+const server = http.createServer((req,res)=>{
+    if (req.url === '/'){
+        res.write("hiii")
+        res.end()
+    } else {
+        res.end("error")
+    }
+})
 
-// server.listen("5050")
+server.listen("5050")
 
 // const http = require("http");
 
@@ -56,11 +56,11 @@
 
 
 
-const http = require("http");
+// const http = require("http");
 
-const server = http.createServer((req,res)=>{
-    res.write("hiilo");
-    res.end()
-})
+// const server = http.createServer((req,res)=>{
+//     res.write("hiilo");
+//     res.end()
+// })
 
-server.listen("7860");
+// server.listen("7860");
