@@ -73,16 +73,13 @@
 
 // server.listen("7860")
 
-const path = require("path");
-const fs = require("fs");
-const { error } = require("console");
 
-const user = "iam dnone this"
+// const path = require("path");
+// const fs = require("fs");
 
-// fs.writeFile(path.join(__dirname, "/api", "api.txt"), `UserName : ${user}` , (err)=>{
+// fs.appendFile(path.join(__dirname, "/api","api.txt"), `User Name : ${user}`, (err)=>{
 //     if (err) throw err;
-// });
+// })
 
-fs.appendFile(path.join(__dirname, "/api","api.txt"), `User name : ${user}`, (err)=>{
-    if (err) throw err;
-})
+
+
