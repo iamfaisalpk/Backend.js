@@ -80,10 +80,3 @@
 // fs.appendFile(path.join(__dirname, "/api","api.txt"), `User Name : ${user}`, (err)=>{
 //     if (err) throw err;
 // })
-
-
-
-const fs = require("fs");
-const path = require("path")
-
-fs.appendFile
