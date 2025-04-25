@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variable files
+.env
+
+# OS-specific files
+.DS_Store
+
+# Debug files
+*.tgz
+.idea/
+.vscode/
