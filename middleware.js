@@ -26,6 +26,7 @@ const getUsers = (req,res)=>{
 }
 
 const createUsers = (req,res)=>{
+    console.log("this the req body from cient :",req.body)
     res.json({message : "create ew users"})
 }
 
@@ -45,4 +46,35 @@ router.use(fakeAuth);
 router.route("/").get(getUsers).post(createUsers)
 app.use("/api/users", router);
 
+// error hadling middleware
+
+const error = (err, req,res, next)=>{
+    const status = res.statusCode ? statusCode : 500;
+    res.status(statusCode);
+
+    switch (statusCode) {
+        case 401 :
+            res.json({
+                title : "Unathorized",
+                message: err.message,
+            })
+            break;
+        case 404 :
+            res.json({
+                title : "Not Found",
+                message: err.message,
+            })
+            break;
+        case 500 :
+            res.json({
+                title : "Server Error",
+                message: err.message,
+            })
+            break;
+        default:
+        break;
+    }
+}
+
+app.use(error)
 
