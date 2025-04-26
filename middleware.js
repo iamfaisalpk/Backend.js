@@ -19,8 +19,6 @@ app.listen(port, ()=>{
 
 // Router middleware
 
-router.route("/").get(getUsers).post(createUsers)
-app.use("/api/users", router);
 
 
 const getUsers = (req,res)=>{
@@ -30,3 +28,21 @@ const getUsers = (req,res)=>{
 const createUsers = (req,res)=>{
     res.json({message : "create ew users"})
 }
+
+const fakeAuth = (req,res,next)=>{
+    const auth = true;
+    if(auth){
+        console.log("user authStatus:", auth)
+        next();
+    } else {
+        res.status(401);
+        throw new Error("user is not autherized")
+    }
+}
+
+router.use(fakeAuth);
+
+router.route("/").get(getUsers).post(createUsers)
+app.use("/api/users", router);
+
+
