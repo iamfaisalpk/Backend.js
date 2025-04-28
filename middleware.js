@@ -19,10 +19,10 @@ const middleware = (req,res,next) =>{
 app.use(middleware);
 
 
-app.listen(port, ()=>{
-    console.log(`running  file: ${port}`);
+// app.listen(port, ()=>{
+//     console.log(`running  file: ${port}`);
     
-})
+// })
 
 
 // Router middleware
@@ -85,10 +85,10 @@ const error = (err, req,res, next)=>{
 
 // thirt party middleware
 
-app.all("*", (rq,rs)=>{
-    rs.status(404);
-    throw new Error("Route not found")
-})
+// app.all("*", (rq,rs)=>{
+//     rs.status(404);
+//     throw new Error("Route not found")
+// })
 
 app.use(error)
 app.listen(port, ()=>{
