@@ -1,8 +1,15 @@
 const express = require("express");
 const app = express();
+const path = require("path")
 const router = express.Router();
 
 const port = 5050;
+
+// Built in middleware
+
+app.use(express.json());
+app.use(express.urlencoded({extended : true}))
+app.use("/static",express.static(path.join(__dirname, "public")))
 
 const middleware = (req,res,next) =>{
     console.log(`${new Date()} --- Request [${req.method}] [${req.url}]`);
@@ -17,8 +24,8 @@ app.listen(port, ()=>{
     
 })
 
-// Router middleware
 
+// Router middleware
 
 
 const getUsers = (req,res)=>{
@@ -76,5 +83,17 @@ const error = (err, req,res, next)=>{
     }
 }
 
+// thirt party middleware
+
+app.all("*", (rq,rs)=>{
+    rs.status(404);
+    throw new Error("Route not found")
+})
+
 app.use(error)
+app.listen(port, ()=>{
+    console.log(`running server ${port}`)
+})
+
+
 
