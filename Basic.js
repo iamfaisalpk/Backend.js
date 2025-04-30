@@ -20,7 +20,6 @@ const user = "faisal" ;
 // })
 
 const EventEmitter =  require("events");
-const { text } = require("stream/consumers");
 const emitter = new EventEmitter();
 
 
