@@ -4,8 +4,14 @@ const app = express();
 
 const port = 7860;
 
+app.use(express.static(path.join(__dirname,"public")))
+
 app.get('/', (req,res)=>{
-    res.download(path.join(__dirname, "Sample.txt"))
+    res.sendFile(path.join(__dirname, "index.html"))
+})
+
+app.get('/download', (req,res)=>{
+    res.download(path.join(__dirname, 'public/images/images.jpg'))
 })
 
 
