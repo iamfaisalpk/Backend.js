@@ -90,10 +90,10 @@ const error = (err, req,res, next)=>{
 //     throw new Error("Route not found")
 // })
 
-app.use(error)
-app.listen(port, ()=>{
-    console.log(`running server ${port}`)
-})
+// app.use(error)
+// app.listen(port, ()=>{
+//     console.log(`running server ${port}`)
+// })
 
 
 

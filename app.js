@@ -6,7 +6,7 @@ app.get('/', (req,res)=>{
     res.send("hoe world kooi");
 })
 
-app.listen(port, ()=>{
-    console.log(`app listening on port : ${port}`);
-})
+// app.listen(port, ()=>{
+//     console.log(`app listening on port : ${port}`);
+// })
 
